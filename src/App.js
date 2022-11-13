@@ -1,23 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import ColorPanel from './colors-panel/colors-panel.component';
+import CirlcePanel from './circle-panel/circle-panel.component';
+import { useState } from 'react';
 
 function App() {
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ColorPanel />
     </div>
   );
 }
