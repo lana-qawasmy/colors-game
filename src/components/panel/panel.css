@@ -1,0 +1,41 @@
+.panel{
+    display: flex;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: aliceblue;
+    width: 450px;
+    height: 75px;
+    justify-content: space-between;
+    align-items:center;
+    align-content: space-between;
+    padding: 5px;
+}
+
+.color-field{
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 50px;
+    height: 50px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.orange{
+    background-color: orange;
+}
+.purple{
+    background-color: purple;
+}
+

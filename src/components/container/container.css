@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    align-self: center;
+    border: 1px solid gray;
+    background-color: rgb(235, 235, 235);
+    border-radius: 15px;
+    width: 500px;
+    height: 900px;
+    align-content: space-between ;
+}
+
+.container > .bottom{
+    align-self: flex-end;
+}
