@@ -1,0 +1,15 @@
+.spanColor{
+    margin: 10px;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border : 1px solid gray;
+}
+.colorDiv{
+    border: 2px solid gray;
+    border-radius: 6px;
+    padding: 5px;
+    height: max-content;
+    width: fit-content;
+}
