@@ -1,0 +1,22 @@
+.item-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #d9eaeb;
+    width: 100%;
+    padding: 7px 0px;
+    border: 2px solid gray;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.205);
+    border-radius: 10px;
+    width: 95%;
+    margin-bottom: 7px;
+}
+
+.item-container .data {
+    font-weight: 500;
+    width: 40px;
+}
+
+.item-container .color {
+    margin: 0px 6px;
+}

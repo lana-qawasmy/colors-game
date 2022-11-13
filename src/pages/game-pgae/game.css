@@ -1,0 +1,26 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #d9eaeb;
+    border: 2px solid #afd9db;
+    height: 700px;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.game-container > .slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: #c7dcdd;
+    padding: 10px 0px;
+    height: 350px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: scroll;
+}
