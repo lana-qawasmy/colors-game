@@ -1,0 +1,12 @@
+.color-input-container {
+    border-radius: 50%;
+    border: 1px solid grey;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0px 0px 20px 0px rgb(223, 223, 223);
+}
+
+.color-input-container:hover {
+    cursor: pointer;
+    scale: 1.1;
+}

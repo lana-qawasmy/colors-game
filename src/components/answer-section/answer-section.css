@@ -1,0 +1,12 @@
+.answer-section-container {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+}
+
+.input-colors-card .color-input-container {
+    border-radius: 15px;
+}
