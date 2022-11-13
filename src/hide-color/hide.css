@@ -1,0 +1,16 @@
+.colorChoice{
+    width: 300px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+}
+
+.Circle-color {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+   border-radius: 15px;
+}

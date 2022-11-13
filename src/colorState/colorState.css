@@ -1,0 +1,20 @@
+.Color {
+    width: 300px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+}
+.color-choice{
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+       border-radius: 15px;
+       background-color: darkgrey;
+}
+.Empty{
+    margin-left: 300px;
+    margin-top: 10px;
+}
