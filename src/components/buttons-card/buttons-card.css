@@ -1,6 +1,6 @@
 .buttons-card {
     border: 1px solid var(--my-grey);
-    border-radius: var(--);
+    border-radius: var(--border-radius);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,0 +1,26 @@
+.colors-card {
+    border: 1px solid var(--my-grey);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.colors-card > .circle{
+    width: 35px;
+    height: 35px;
+    border: none;
+    margin: 0 5px;
+    border-radius:  var(--circle-radius);
+    box-shadow: 1px 1px 0 var(--my-grey);
+}
+
+
+.colors-card > .clear-btn{
+    background-color: #fa8072;
+    border: none;
+    border-radius: var(--circle-radius);
+    width: 20px;
+    height: 20px;
+}

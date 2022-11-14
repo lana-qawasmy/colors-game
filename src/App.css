@@ -1,5 +1,6 @@
 body {
     --border-radius: 0.25rem;
+    --circle-radius : 20px;
     --my-grey: #a5a4a4;
     display: flex;
     justify-content: center;
