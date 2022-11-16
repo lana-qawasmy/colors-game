@@ -1,10 +1,22 @@
 import React from 'react';
 import './color-box.css';
-const ColorBox = () => {
-    return (
-        <div>
+import { COLORS } from '../../services/data';
 
-        </div>
+const ColorBox = ({ border, win, }) => {
+    return (
+        <div className={`colors-box ${border}`}>
+            {
+                COLORS.map((color) => {
+                    return (
+                        <span
+                            style={{ backgroundColor: win ? color : '' }}
+                            className={`cell ${border}`}
+                        >
+                        </span>
+                    );
+                })
+            }
+        </div >
     );
 };
 
