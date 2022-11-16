@@ -1,17 +1,17 @@
-.colors-box {
+.choose-box {
     display: flex;
     justify-content: space-between;
     padding: 0px 10px;
     align-items: center;
-    height: 60px;
+    height: 50px;
     width: 80%;
     border: 1px solid gray;
     margin-top: 16px;
     border-radius: 5px;
 }
 
-.colors-box .cell {
-    background-color: gray;
+.choose-box .cell {
+    border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -19,12 +19,11 @@
     width: 40px;
     height: 40px;
     border: 1px solid rgb(80, 80, 80);
-    border-radius: 50%;
+    box-shadow: 1px 1px 3px;
     opacity: 0.9;
+
 }
-.state{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+
+.choose-box .cell:active {
+    box-shadow: -1px -1px 3px;
 }

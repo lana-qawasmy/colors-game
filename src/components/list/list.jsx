@@ -2,19 +2,19 @@ import React from 'react';
 import ColorBox from '../color-box/color-box';
 import './list.css';
 
-/**
- * 
- * @param {string} list 
- * @returns 
- */
-const List = ({ list, }) => {
+const List = ({ list }) => {
 
     return (
         <div className='list'>
             {
-                list.map((item) => {
+                list.map((item, ind) => {
                     return (
-                        <ColorBox colors={item} />
+                        <ColorBox
+                            key={'colors' + item + 'color' + ind}
+                            colorsArray={item}
+                            hidden={false}
+                            state={1}
+                        />
                     );
                 })}
         </div>

@@ -3,9 +3,14 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid gray;
     width: 85%;
     height: 50vh;
+    max-height: 50vh;
+    overflow-y:scroll ;
     margin-top: 10px;
-    margin-bottom: 10px;
+}
+
+.list .colors-box
+{
+    min-height: 70px;
 }

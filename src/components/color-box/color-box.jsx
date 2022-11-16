@@ -1,20 +1,33 @@
 import React from 'react';
 import './color-box.css';
-import { COLORS } from '../../services/data';
 
-const ColorBox = ({ border, colors, hidden}) => {
+
+const ColorBox = ({ colorsArray, hidden, state }) => {
     return (
-        <div className={`colors-box ${border}`}>
+        <div className={`colors-box`}>
             {
-                COLORS.map((color) => {
+                (colorsArray || []).map((color, ind) => {
                     return (
                         <span
-                            style={{ backgroundColor: hidden ? color : '' }}
-                            className={`cell ${border}`}
+                            style={{ backgroundColor: hidden ? 'gray' : color }}
+                            className={`cell`}
+                            key={'color' + color + 'index' + ind}
                         >
                         </span>
                     );
                 })
+            }
+            {
+                state &&
+                <span className='state'>
+                    <span>
+                        CC :
+                    </span>
+                    <span>
+                        CR :
+                    </span>
+                </span>
+
             }
         </div >
     );
