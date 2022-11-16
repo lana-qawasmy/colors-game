@@ -5,13 +5,21 @@ import Status from '../status/status';
 import './board.css';
 const Board = () => {
     const [steps, setSteps] = useState(0);
+    const [list, setList] = useState([]);
+
+    const handleListUpdate = (item) => {
+
+    };
+
     return (
         <div className='board'>
             <Status steps={steps} />
             <hr />
             <ColorBox />
             <hr style={{ height: '1px' }} />
-            <List />
+            <List list={list} />
+            <hr />
+            
         </div>
     );
 };

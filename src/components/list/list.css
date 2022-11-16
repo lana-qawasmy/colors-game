@@ -1,0 +1,11 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid gray;
+    width: 85%;
+    height: 50vh;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

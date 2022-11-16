@@ -2,14 +2,14 @@ import React from 'react';
 import './color-box.css';
 import { COLORS } from '../../services/data';
 
-const ColorBox = ({ border, win, }) => {
+const ColorBox = ({ border, colors, hidden}) => {
     return (
         <div className={`colors-box ${border}`}>
             {
                 COLORS.map((color) => {
                     return (
                         <span
-                            style={{ backgroundColor: win ? color : '' }}
+                            style={{ backgroundColor: hidden ? color : '' }}
                             className={`cell ${border}`}
                         >
                         </span>
