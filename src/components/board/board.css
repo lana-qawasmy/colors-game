@@ -1,0 +1,20 @@
+.board {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid gray;
+    width: 500px;
+    height: 90vh;
+    border-radius: 5px;
+
+}
+
+hr {
+    color: gray;
+    background-color: gray;
+    height: 2px;
+    width: 90%;
+    margin: 0px;
+}
