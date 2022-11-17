@@ -8,7 +8,7 @@ const COLORS = [
     'darkcyan',
 ];
 
-const Circles = 4;
+const Circles = 5;
 
 export {
     COLORS, Circles

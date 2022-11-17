@@ -7,15 +7,15 @@ import Status from '../status/status';
 import './board.css';
 
 
-const Board = ({ResultArray}) => {
+const Board = ({ ResultArray }) => {
     const [steps, setSteps] = useState(0);
     const [list, setList] = useState([]);
     const [win, setWin] = useState(false);
     const [answer, setAnswer] = useState([]);
     useEffect(() => {
         setList(JSON.parse(localStorage.getItem('answers')) || []);
-        if (answer.length === Circles)
-        {
+        setSteps(list.length);
+        if (answer.length === Circles) {
             handleListUpdate();
             setAnswer([]);
         }
@@ -23,7 +23,7 @@ const Board = ({ResultArray}) => {
 
     const handleListUpdate = () => {
         let arr = JSON.parse(localStorage.getItem('answers')) || [];
-        arr.push(answer);
+        arr = [answer, ...arr];
         setList(arr);
         setSteps(steps + 1);
         localStorage.setItem('answers', JSON.stringify(arr));
