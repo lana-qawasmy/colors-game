@@ -30,6 +30,7 @@ const ColorBox = ({ colorsArray, hidden, state }) => {
                     );
                 })
             }
+
             {
                 state &&
                 <span className='state'>
@@ -40,8 +41,9 @@ const ColorBox = ({ colorsArray, hidden, state }) => {
                         CR : {state.cr}
                     </span>
                 </span>
-
             }
+
+
         </div >
     );
 };

@@ -21,9 +21,14 @@
     border: 1px solid rgb(80, 80, 80);
     box-shadow: 1px 1px 3px;
     opacity: 0.9;
-
+    cursor: pointer;
 }
 
 .choose-box .cell:active {
     box-shadow: -1px -1px 3px;
+}
+
+.choose-box .cell:disabled {
+    opacity: 0.5;
+    cursor: auto;
 }

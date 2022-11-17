@@ -16,18 +16,28 @@ const Board = ({ ResultArray }) => {
     useEffect(() => {
         setSteps(list.length);
         if (answer.length === Circles) {
-            handleListUpdate();
+            let arr = list;
+            let State = GetState(answer);
+            arr = [{ State, answer }, ...arr];
+            setList(arr);
+            setSteps(steps + 1);
+            if (State.cc === Circles) {
+                setWin(true);
+            }
             setAnswer([]);
         }
-    }, [answer]);
+    }, [answer, list, steps]);
 
-    const handleListUpdate = () => {
-        let arr = list;
-        let State = GetState(answer);
-        arr = [{ State, answer }, ...arr];
-        setList(arr);
-        setSteps(steps + 1);
-    };
+    // const handleListUpdate = () => {
+    //     let arr = list;
+    //     let State = GetState(answer);
+    //     arr = [{ State, answer }, ...arr];
+    //     setList(arr);
+    //     setSteps(steps + 1);
+    //     if (State.cc === Circles) {
+    //         setWin(true);
+    //     }
+    // };
 
     return (
         <div className='board'>
@@ -42,6 +52,7 @@ const Board = ({ ResultArray }) => {
             <List list={list} />
             <hr />
             <Answer
+                win={win}
                 answer={answer}
                 setAnswer={setAnswer}
             />

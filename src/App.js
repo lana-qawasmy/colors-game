@@ -3,7 +3,8 @@ import Board from './components/board/board';
 import { GetRandColor } from './services/services';
 
 function App() {
-    const HiddenResult = GetRandColor();
+    const HiddenResult = ['red', 'red', 'red', 'red', 'red'] || GetRandColor();
+
     return (
         <div className="App">
             <Board ResultArray={HiddenResult} />

@@ -7,8 +7,9 @@ const GetRandColor = () => {
     return ret;
 };
 
-const GetState = () => {
-    return { cc: 0, cr: 0 };
+const GetState = (answer) => {
+
+    return { cc: 5, cr: 0 };
 };
 
 export {

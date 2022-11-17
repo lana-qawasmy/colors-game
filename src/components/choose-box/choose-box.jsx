@@ -2,14 +2,17 @@ import React from 'react';
 import { COLORS } from '../../services/data';
 import './choose-box.css';
 
-const ChooseBox = ({ answer, setAnswer }) => {
+const ChooseBox = ({ disabled, answer, setAnswer }) => {
     return (
         <div className={`choose-box`}>
             {
                 COLORS.map((color, ind) => {
                     return (
-                        <span
-                            style={{ backgroundColor: color }}
+                        <button
+                            style={{
+                                backgroundColor: color,
+                            }}
+                            disabled={disabled}
                             className={`cell`}
                             key={'color' + color + 'index' + ind}
                             onClick={() => {
@@ -18,7 +21,7 @@ const ChooseBox = ({ answer, setAnswer }) => {
                                 setAnswer(arr);
                             }}
                         >
-                        </span>
+                        </button>
                     );
                 })
             }
