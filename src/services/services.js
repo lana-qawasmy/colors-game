@@ -1,13 +1,12 @@
 import { COLORS, Circles } from "./data";
-const GetRandColor = (Arr) => {
+const GetRandColor = () => {
     let ret = [];
     for (let i = 0; i < Circles; i++) {
-        ret.push(parseInt(Math.random() * 100) % COLORS.length);
+        ret.push(COLORS[parseInt(Math.random() * 100) % COLORS.length]);
     }
-    console.log(ret);
-    Arr = ret;
+    return ret;
 };
 
-export default {
+export {
     GetRandColor
 };

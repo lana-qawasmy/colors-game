@@ -1,12 +1,12 @@
 import './App.css';
 import Board from './components/board/board';
-import GetRandColor from './services/services';
-let A =[];
+import {GetRandColor} from './services/services';
+
 function App() {
-    GetRandColor(A);
+    const HiddenResult = GetRandColor();
     return (
         <div className="App">
-            <Board ResultArray={A} />
+            <Board ResultArray={HiddenResult} />
         </div>
     );
 }
