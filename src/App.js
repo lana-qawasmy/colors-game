@@ -25,8 +25,29 @@ function App() {
   };
 
   const checkAnswer = (answer) => {
-    let cc = 0,
-      cr = 0;
+    let cc = 0, cr = 0;
+
+    const map = {};
+    for (let i = 0; i < question.length; i++) {
+      if (!map[question[i]])
+        map[question[i]] = 0;
+      map[question[i]]++;
+    }
+
+    for (let i = 0; i < answer.length; i++) {
+      if (map[answer[i]]) {
+        cr += 1;
+        map[answer[i]]--;
+      }
+    }
+
+    for (let i = 0; i < answer.length; i++) {
+      if (question[i] === answer[i]) {
+        cc += 1;
+        cr--;
+      }
+    }
+    return { cc, cr }
   };
 
   const handleAnswerSubmit = (answer) => {
