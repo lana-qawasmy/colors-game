@@ -6,7 +6,6 @@ import List from '../list/list';
 import Status from '../status/status';
 import './board.css';
 
-// GetRandColor();
 
 const Board = ({ResultArray}) => {
     const [steps, setSteps] = useState(0);
@@ -16,14 +15,17 @@ const Board = ({ResultArray}) => {
     useEffect(() => {
         setList(JSON.parse(localStorage.getItem('answers')) || []);
         if (answer.length === Circles)
+        {
             handleListUpdate();
+            setAnswer([]);
+        }
     }, [answer]);
 
     const handleListUpdate = () => {
         let arr = JSON.parse(localStorage.getItem('answers')) || [];
         arr.push(answer);
-        setAnswer([]);
         setList(arr);
+        setSteps(steps + 1);
         localStorage.setItem('answers', JSON.stringify(arr));
     };
 
@@ -46,7 +48,6 @@ const Board = ({ResultArray}) => {
             <hr />
 
             <Answer
-                handleListUpdate={handleListUpdate}
                 answer={answer}
                 setAnswer={setAnswer}
             />

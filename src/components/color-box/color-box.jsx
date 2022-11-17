@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Circles } from '../../services/data';
 import './color-box.css';
 
 
 const ColorBox = ({ colorsArray, hidden, state }) => {
+    useEffect(() => { }, [colorsArray]);
+
+    let cols = Array(Circles).fill('gray');
+    const SetColors = () => {
+        if (colorsArray) {
+
+            for (let i = 0; i < colorsArray.length; i++) {
+                cols[i] = colorsArray[i];
+            };
+        }
+    };
+    SetColors();
     return (
         <div className={`colors-box`}>
             {
-                (colorsArray || []).map((color, ind) => {
+                (cols).map((color, ind) => {
                     return (
                         <span
                             style={{ backgroundColor: hidden ? 'gray' : color }}
