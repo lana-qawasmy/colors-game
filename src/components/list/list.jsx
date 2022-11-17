@@ -11,9 +11,9 @@ const List = ({ list }) => {
                     return (
                         <ColorBox
                             key={'colors' + item + 'color' + ind}
-                            colorsArray={item}
+                            colorsArray={item.answer}
                             hidden={false}
-                            state={1}
+                            state={item.State}
                         />
                     );
                 })}

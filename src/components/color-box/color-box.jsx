@@ -34,10 +34,10 @@ const ColorBox = ({ colorsArray, hidden, state }) => {
                 state &&
                 <span className='state'>
                     <span>
-                        CC :
+                        CC : {state.cc}
                     </span>
                     <span>
-                        CR :
+                        CR : {state.cr}
                     </span>
                 </span>
 

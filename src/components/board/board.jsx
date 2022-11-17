@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Circles } from '../../services/data';
+import { GetState } from '../../services/services';
 import Answer from '../answer/answer';
 import ColorBox from '../color-box/color-box';
 import List from '../list/list';
@@ -13,7 +14,6 @@ const Board = ({ ResultArray }) => {
     const [win, setWin] = useState(false);
     const [answer, setAnswer] = useState([]);
     useEffect(() => {
-        setList(JSON.parse(localStorage.getItem('answers')) || []);
         setSteps(list.length);
         if (answer.length === Circles) {
             handleListUpdate();
@@ -22,31 +22,25 @@ const Board = ({ ResultArray }) => {
     }, [answer]);
 
     const handleListUpdate = () => {
-        let arr = JSON.parse(localStorage.getItem('answers')) || [];
-        arr = [answer, ...arr];
+        let arr = list;
+        let State = GetState(answer);
+        arr = [{ State, answer }, ...arr];
         setList(arr);
         setSteps(steps + 1);
-        localStorage.setItem('answers', JSON.stringify(arr));
     };
 
     return (
         <div className='board'>
             <Status steps={steps} />
-
             <hr />
-
             <ColorBox
                 colorsArray={ResultArray}
                 border={'circle'}
                 hidden={!win}
             />
-
             <hr style={{ height: '1px' }} />
-
             <List list={list} />
-
             <hr />
-
             <Answer
                 answer={answer}
                 setAnswer={setAnswer}
