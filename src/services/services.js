@@ -7,10 +7,32 @@ const GetRandColor = () => {
     return ret;
 };
 
-const GetState = (answer) => {
 
-    return { cc: 5, cr: 0 };
+const GetState = (answer, HiddenResult) => {
+    let cc = 0, cr = 0;
+    const map = {};
+    for (let i = 0; i < HiddenResult.length; i++) {
+        if (!map[HiddenResult[i]])
+            map[HiddenResult[i]] = 0;
+        map[HiddenResult[i]]++;
+    }
+
+    for (let i = 0; i < answer.length; i++) {
+        if (map[answer[i]]) {
+            cr += 1;
+            map[answer[i]]--;
+        }
+    }
+
+    for (let i = 0; i < answer.length; i++) {
+        if (HiddenResult[i] === answer[i]) {
+            cc += 1;
+            cr--;
+        }
+    }
+    return { cc, cr };
 };
+
 
 export {
     GetState,

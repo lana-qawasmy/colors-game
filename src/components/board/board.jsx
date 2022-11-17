@@ -13,31 +13,25 @@ const Board = ({ ResultArray }) => {
     const [list, setList] = useState([]);
     const [win, setWin] = useState(false);
     const [answer, setAnswer] = useState([]);
+
     useEffect(() => {
         setSteps(list.length);
         if (answer.length === Circles) {
-            let arr = list;
-            let State = GetState(answer);
-            arr = [{ State, answer }, ...arr];
-            setList(arr);
-            setSteps(steps + 1);
-            if (State.cc === Circles) {
-                setWin(true);
-            }
+            handleListUpdate();
             setAnswer([]);
         }
-    }, [answer, list, steps]);
+    }, [answer, list]);
 
-    // const handleListUpdate = () => {
-    //     let arr = list;
-    //     let State = GetState(answer);
-    //     arr = [{ State, answer }, ...arr];
-    //     setList(arr);
-    //     setSteps(steps + 1);
-    //     if (State.cc === Circles) {
-    //         setWin(true);
-    //     }
-    // };
+    const handleListUpdate = () => {
+        let arr = list;
+        let State = GetState(answer, ResultArray);
+        arr = [{ State, answer }, ...arr];
+        setList(arr);
+        setSteps(steps + 1);
+        if (State.cc === Circles) {
+            setWin(true);
+        }
+    };
 
     return (
         <div className='board'>
