@@ -2,8 +2,9 @@
   position: relative;
   width: 100%;
 }
+
 .colors-card .card {
- padding: 10px
+  padding: 10px
 }
 
 .colors-card .circle {
@@ -27,7 +28,7 @@
   box-shadow: 1px 1px 0 var(--my-grey);
   padding-left: 5px;
   padding-bottom: 6px;
-  
+
   position: absolute;
   top: -7px;
   right: -7px;
@@ -35,7 +36,7 @@
 
 
 .colors-card .stats {
-  font-weight: bold;
   margin-left: auto;
+  font-size: 18px;
   padding-right: 10px;
 }

@@ -22,7 +22,7 @@ const ColorsCard = (props) => {
         {props.withClearBtn && <button className='clear-btn'>x</button>}
         {renderCards(answers)}
         {props.stats && <div className='stats'>
-          CC:{0} <br /> CR:{0}
+          CC: <b>{props.stats.cc}</b> <br /> CR: <b>{props.stats.cr}</b>
         </div>}
       </Card>
     </div>

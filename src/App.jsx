@@ -13,14 +13,14 @@ function App() {
       {/* heading (name of game and steps) */}
       <div className='heading'>
         <h1>Colors Game</h1>
-        <h2>Steps: {0}</h2>
+        <h2>Steps: {3}</h2>
       </div>
-      <br/>
-      <ColorsCard/>
+      <br />
+      <ColorsCard />
       {/* hidden colors card */}
-      <hr style={{ width: '100%', backgroundColor:"var(--my-grey)" }} />
+      <hr style={{ width: '100%', backgroundColor: "var(--my-grey)" }} />
       <HistoryBlock />
-      <hr style={{ width: '100%', backgroundColor:"var(--my-grey)" }} />
+      <hr style={{ width: '100%', backgroundColor: "var(--my-grey)" }} />
       <AnswerForm currentAnswer setCurrentAnswer />
     </div>
   );
