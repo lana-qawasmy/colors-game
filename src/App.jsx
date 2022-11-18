@@ -9,6 +9,8 @@ function App() {
   // const win or not as a useState (add fireworks!)
   return (
     <div className="App">
+      {/* heading (name of game and steps) */}
+      {/* hidden colors card */}
       <HistoryBlock/>
       <AnswerForm currentAnswer setCurrentAnswer />
     </div>

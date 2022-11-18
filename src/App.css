@@ -10,7 +10,7 @@ body {
 .App {
     background-color: aliceblue;
     height: 80vh;
-    width: 25vw;
+    width: 400px;
     padding:15px;
     border: 1px solid var(--my-grey);
     border-radius: var(--border-radius);

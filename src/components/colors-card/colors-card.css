@@ -1,5 +1,6 @@
 .colors-card {
     position: relative;
+    width: 100%;
 }
 
 .colors-card .circle {
@@ -10,7 +11,6 @@
     border-radius: var(--circle-radius);
     box-shadow: 1px 1px 0 var(--my-grey);
 }
-
 
 .colors-card .clear-btn {
     background-color: #fa8072;
@@ -25,7 +25,7 @@
     font-weight: 900;
     box-shadow: 1px 1px 0 var(--my-grey);
     padding-left: 5px;
-    padding-bottom: 3px;
+    padding-bottom: 6px;
 
     position: absolute;
     top: -7px;
