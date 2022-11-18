@@ -1,26 +1,14 @@
-import './history-block.css'
-import Card from '../card/card.component'
-import ColorsCard from '../colors-card/colors-card.component'
+import './history-block.css';
+import ColorsCard from '../colors-card/colors-card.component';
 
 const HistoryBlock = () => {
-    return (
-        <div className='history-block'>
-            <Card>
-                <ColorsCard />
-                <ColorsCard />
-                <ColorsCard />
-                <ColorsCard />
-                <ColorsCard />
-                <ColorsCard />
-                <ColorsCard />
-                <ColorsCard />
-                <ColorsCard />
-                <ColorsCard />
-                <ColorsCard />
-                <ColorsCard />
-            </Card>
-        </div>
-    )
-}
+  return (
+    <div className='history-block'>
+        <ColorsCard stats colors={['red', 'green', 'purple', 'orange']}/>
+        <ColorsCard stats colors={['yellow', 'yellow', 'yellow', 'yellow']}/>
+        <ColorsCard stats colors={['blue', 'blue', 'blue', 'blue']}/>
+    </div>
+  );
+};
 
 export default HistoryBlock;

@@ -1,11 +1,12 @@
-.history-block>.card {
-    display: flex;
-    flex-wrap: wrap;
-    height: 400px;
-    max-height: 400px;
-    overflow-y: scroll;
+.history-block {
+  height: 400px;
+  max-height: 400px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
-.history-block>.card>.colors-card {
-    margin-bottom: 5px;
+
+.history-block .colors-card {
+  margin-bottom: 5px;
 }

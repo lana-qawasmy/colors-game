@@ -1,22 +1,31 @@
-import './colors-card.css'
-import Card from '../card/card.component'
+import './colors-card.css';
+import Card from '../card/card.component';
 
-let answers = new Array(4).fill('#c1c0c0')
+const renderCards = (arr) => arr.map((color, index) =>
+  <div
+    className='circle'
+    key={"color_" + Date.now() + index}
+    style={{ backgroundColor: color }}
+  />
+);
+
 const ColorsCard = (props) => {
-    return (
-        <div className='colors-card'>
-            <Card>
-                {props.withClearBtn && <button className='clear-btn'>x</button>}
-                {answers.map((color, index) =>
-                    <div
-                        className='circle'
-                        key={"color_" + Date.now() + index}
-                        style={{ backgroundColor: color }}
-                    />
-                )}
-            </Card>
-        </div>
-    )
-}
+  let answers;
+  if (props.colors)
+    answers = props.colors;
+  else
+    answers = new Array(4).fill('#808080');
 
+  return (
+    <div className='colors-card'>
+      <Card>
+        {props.withClearBtn && <button className='clear-btn'>x</button>}
+        {renderCards(answers)}
+        {props.stats && <div className='stats'>
+          CC:{0} <br /> CR:{0}
+        </div>}
+      </Card>
+    </div>
+  );
+};
 export default ColorsCard;

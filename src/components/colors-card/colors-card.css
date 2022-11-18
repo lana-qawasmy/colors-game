@@ -1,33 +1,41 @@
 .colors-card {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
+}
+.colors-card .card {
+ padding: 10px
 }
 
 .colors-card .circle {
-    width: 60px;
-    height: 60px;
-    border: none;
-    margin: 0 5px;
-    border-radius: var(--circle-radius);
-    box-shadow: 1px 1px 0 var(--my-grey);
+  width: 50px;
+  height: 50px;
+  border: 1px solid #808080;
+  margin: 0 12px;
+  border-radius: var(--circle-radius);
+  box-shadow: 1px 1px 3px var(--my-grey);
 }
 
 .colors-card .clear-btn {
-    background-color: #fa8072;
-    border: none;
-    border-radius: var(--circle-radius);
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
-    line-height: 10px;
-    /* color: rgb(255, 255, 255); */
-    font-family: cursive;
-    font-weight: 900;
-    box-shadow: 1px 1px 0 var(--my-grey);
-    padding-left: 5px;
-    padding-bottom: 6px;
+  background-color: #fa8072;
+  border: none;
+  border-radius: var(--circle-radius);
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  line-height: 10px;
+  font-family: cursive;
+  box-shadow: 1px 1px 0 var(--my-grey);
+  padding-left: 5px;
+  padding-bottom: 6px;
+  
+  position: absolute;
+  top: -7px;
+  right: -7px;
+}
 
-    position: absolute;
-    top: -7px;
-    right: -7px
+
+.colors-card .stats {
+  font-weight: bold;
+  margin-left: auto;
+  padding-right: 10px;
 }

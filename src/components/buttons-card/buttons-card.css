@@ -1,12 +1,18 @@
+
+.buttons-card .card{
+  justify-content: center;
+  padding: 10px;
+}
+
 .buttons-card button {
-    width: 50px;
-    height: 50px;
-    border: none;
-    margin: 0 5px;
-    border-radius: var(--border-radius);
-    box-shadow: 1px 1px 0 var(--my-grey);
+  width: 50px;
+  height: 50px;
+  border: 1px solid #9b9d9e;
+  margin: 0 5px;
+  border-radius: var(--border-radius);
+  box-shadow: 1px 1px 3px var(--my-grey);
 }
 
 .buttons-card button:active {
-    box-shadow: -1px -1px 0px rgb(126, 125, 125);
+  box-shadow: -1px -1px 0px rgb(126, 125, 125);
 }
