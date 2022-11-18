@@ -1,21 +1,12 @@
-.buttons-card {
-    border: 1px solid var(--my-grey);
-    border-radius: var(--border-radius);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-}
-
-.buttons-card > button{
-    width: 35px;
-    height: 35px;
+.buttons-card button {
+    width: 60px;
+    height: 60px;
     border: none;
     margin: 0 5px;
     border-radius: var(--border-radius);
     box-shadow: 1px 1px 0 var(--my-grey);
 }
 
-.buttons-card > button:active {
-    box-shadow: -1px -1px 1px var(--my-grey);
+.buttons-card button:active {
+    box-shadow: -1px -1px 0px rgb(126, 125, 125);
 }

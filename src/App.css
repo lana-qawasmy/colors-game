@@ -1,15 +1,19 @@
 body {
     --border-radius: 0.25rem;
-    --circle-radius : 20px;
+    --circle-radius : 100px;
     --my-grey: #a5a4a4;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .App {
-    height: 60vh;
+    background-color: aliceblue;
+    height: 80vh;
+    width: 25vw;
+    padding:5px;
     border: 1px solid var(--my-grey);
     border-radius: var(--border-radius);
-    width: 300px;
+    display: flex;
+    flex-direction: column;
 }
