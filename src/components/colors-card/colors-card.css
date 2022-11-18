@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: center;
     padding: 5px;
+    position: relative;
 }
 
 .colors-card > .circle{
@@ -21,6 +22,16 @@
     background-color: #fa8072;
     border: none;
     border-radius: var(--circle-radius);
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
+    font-size: 17px;
+    line-height: 10px;
+    color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 0 var(--my-grey);
+    padding-left: 5px;
+    padding-bottom: 3px;
+
+    position:absolute;
+    top: -7px;
+    right: -7px
 }

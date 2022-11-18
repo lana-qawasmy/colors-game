@@ -5,7 +5,7 @@ import './answer-form.css'
 const AnswerForm = (props) => {
     return (
         <div className='answer-form'>
-            <ColorsCard />
+            <ColorsCard withClearBtn/>
             <ButtonsCard
                 colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
             />

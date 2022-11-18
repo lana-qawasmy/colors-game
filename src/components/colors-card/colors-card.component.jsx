@@ -1,12 +1,16 @@
 import './colors-card.css'
 
 let answers = new Array(4).fill('grey')
-const ColorsCard = () => {
+const ColorsCard = (props) => {
     return (
         <div className='colors-card'>
-        <button className='clear-btn'>X</button>
-            {answers.map(color =>
-                <div className='circle' style={{ backgroundColor: color }} />
+            {props.withClearBtn && <button className='clear-btn'>x</button>}
+            {answers.map((color, index) =>
+                <div
+                    className='circle'
+                    key={"color_" + Date.now}
+                    style={{ backgroundColor: color }}
+                />
             )}
         </div>
     )
