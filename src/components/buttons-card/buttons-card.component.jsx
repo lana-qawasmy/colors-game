@@ -9,6 +9,7 @@ const ButtonsCard = (props) => {
           <button
             key={'button_' + Date.now() + index}
             style={{ backgroundColor: color }}
+            onClick={() => props.onClick(color)}
           />)}
       </Card>
     </div>

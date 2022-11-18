@@ -6,22 +6,37 @@ import ColorsCard from './components/colors-card/colors-card.component';
 
 function App() {
   const [currentAnswer, setCurrentAnswer] = useState([]);
-  // const all answers as a useState
-  // const win or not as a useState (add fireworks!)
+  const [history, setHistory] = useState([]);
+  // const: all answers as a useState
+  // const: win or not as a useState (add fireworks!)
   return (
     <div className="App">
-      {/* heading (name of game and steps) */}
       <div className='heading'>
         <h1>Colors Game</h1>
         <h2>Steps: {3}</h2>
       </div>
       <br />
       <ColorsCard />
-      {/* hidden colors card */}
-      <hr style={{ width: '100%', backgroundColor: "var(--my-grey)" }} />
-      <HistoryBlock />
-      <hr style={{ width: '100%', backgroundColor: "var(--my-grey)" }} />
-      <AnswerForm currentAnswer setCurrentAnswer />
+
+      <hr
+        style={{
+          width: '100%',
+          backgroundColor: "var(--my-grey)"
+        }}
+      />
+      <HistoryBlock history={history}/>
+      <hr
+        style={{
+          width: '100%',
+          backgroundColor: "var(--my-grey)"
+        }}
+      />
+
+      <AnswerForm
+        currentAnswer={currentAnswer}
+        setCurrentAnswer={setCurrentAnswer}
+        history={history}
+        setHistory={setHistory} />
     </div>
   );
 }
