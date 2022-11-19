@@ -1,0 +1,52 @@
+.choice {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    align-items: center;
+    height: 50px;
+    width: 80%;
+    border: 1px solid gray;
+    margin-top: 16px;
+    border-radius: 5px;
+}
+
+.choice .try-again {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 40px;
+    text-transform: capitalize;
+    background-color: rgb(178, 178, 178);
+    border: 1px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px;
+}
+
+.choice .show-answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 40px;
+    text-transform: capitalize;
+    background-color: rgb(178, 178, 178);
+    border: 1px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px;
+}
+
+.choice .show-answer:active {
+    box-shadow: -1px -1px 3px;
+}
+
+.choice .show-answer:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.choice .try-again:active {
+    box-shadow: -1px -1px 3px;
+}

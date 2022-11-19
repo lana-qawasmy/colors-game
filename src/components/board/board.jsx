@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Circles } from '../../services/data';
 import { GetState } from '../../services/services';
 import Answer from '../answer/answer';
+import Choice from '../choice/choice';
 import ColorBox from '../color-box/color-box';
 import List from '../list/list';
 import Status from '../status/status';
@@ -12,6 +13,7 @@ const Board = ({ ResultArray }) => {
     const [steps, setSteps] = useState(0);
     const [list, setList] = useState([]);
     const [win, setWin] = useState(false);
+    const [show, setShow] = useState(false);
     const [answer, setAnswer] = useState([]);
 
     useEffect(() => {
@@ -39,16 +41,24 @@ const Board = ({ ResultArray }) => {
             <hr />
             <ColorBox
                 colorsArray={ResultArray}
-                border={'circle'}
-                hidden={!win}
+                hidden={!win && !show}
             />
             <hr style={{ height: '1px' }} />
             <List list={list} />
             <hr />
             <Answer
                 win={win}
+                show={show}
                 answer={answer}
                 setAnswer={setAnswer}
+            />
+            <Choice
+                setList={setList}
+                setAnswer={setAnswer}
+                setShow={setShow}
+                win={win}
+                setWin={setWin}
+                show={show}
             />
         </div>
     );

@@ -4,11 +4,11 @@ import ColorBox from '../color-box/color-box';
 import './answer.css';
 
 
-const Answer = ({ win, answer, setAnswer }) => {
+const Answer = ({ show, win, answer, setAnswer }) => {
     return (
         <div className='answer-box'>
             <button
-                disabled={win}
+                disabled={win || show}
                 className='clear'
                 onClick={() => setAnswer([])}
             >
@@ -16,7 +16,7 @@ const Answer = ({ win, answer, setAnswer }) => {
             </button>
             <ColorBox colorsArray={answer} />
             <ChooseBox
-                disabled={win}
+                disabled={win || show}
                 answer={answer}
                 setAnswer={setAnswer}
             />
