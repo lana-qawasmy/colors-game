@@ -1,4 +1,5 @@
 import React from 'react';
+import { GetRandColor } from '../../services/services';
 import './choice.css';
 
 /**
@@ -8,6 +9,7 @@ import './choice.css';
  *      setAnswer:React.Dispatch<React.SetStateAction<never[]>>;
  *      setShow:React.Dispatch<React.SetStateAction<boolean>>;
  *      setWin:React.Dispatch<React.SetStateAction<boolean>>;
+ *      setHiddenResult:React.Dispatch<React.SetStateAction<string[]>>;
  *      win:boolean;
  *      show:boolean;
  * }} props 
@@ -19,6 +21,7 @@ const Choice = (props) => {
         props.setList([]);
         props.setShow(false);
         props.setWin(false);
+        props.setHiddenResult(GetRandColor());
     };
     const handleShow = () => {
         props.setShow(true);

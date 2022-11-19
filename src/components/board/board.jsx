@@ -10,13 +10,12 @@ import Status from '../status/status';
 import './board.css';
 
 
-const Board = ({ ResultArray }) => {
+const Board = ({ ResultArray, setHiddenResult }) => {
     const [steps, setSteps] = useState(0);
     const [list, setList] = useState([]);
+    const [answer, setAnswer] = useState([]);
     const [win, setWin] = useState(false);
     const [show, setShow] = useState(false);
-    const [answer, setAnswer] = useState([]);
-
     useEffect(() => {
         setSteps(list.length);
         if (answer.length === Circles) {
@@ -61,6 +60,7 @@ const Board = ({ ResultArray }) => {
                 setAnswer={setAnswer}
             />
             <Choice
+                setHiddenResult={setHiddenResult}
                 setList={setList}
                 setAnswer={setAnswer}
                 setShow={setShow}
