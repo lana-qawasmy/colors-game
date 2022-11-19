@@ -7,6 +7,13 @@ import './answer.css';
 const Answer = ({ win, answer, setAnswer }) => {
     return (
         <div className='answer-box'>
+            <button
+                disabled={win}
+                className='clear'
+                onClick={() => setAnswer([])}
+            >
+                X
+            </button>
             <ColorBox colorsArray={answer} />
             <ChooseBox
                 disabled={win}
