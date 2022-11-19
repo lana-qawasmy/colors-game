@@ -4,6 +4,7 @@ import { GetState } from '../../services/services';
 import Answer from '../answer/answer';
 import Choice from '../choice/choice';
 import ColorBox from '../color-box/color-box';
+import Result from '../result/result';
 import List from '../list/list';
 import Status from '../status/status';
 import './board.css';
@@ -44,7 +45,14 @@ const Board = ({ ResultArray }) => {
                 hidden={!win && !show}
             />
             <hr style={{ height: '1px' }} />
-            <List list={list} />
+            {
+                (win || show)
+                    ? <Result
+                        win={win}
+                        show={show}
+                    />
+                    : <List list={list} />
+            }
             <hr />
             <Answer
                 win={win}
