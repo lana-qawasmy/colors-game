@@ -1,0 +1,35 @@
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2px 10px;
+    box-sizing: border-box;
+    box-shadow: 4px 3px 6px 0px #d7d7d7;
+    border-radius: 7px;
+    margin-bottom: 5px;
+  
+    background-color:#9F73AB ;
+  }
+  
+  .row .point {
+    background-color: grey;
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    box-shadow: 4px 3px 6px 0px #ffffffb6;
+  }
+  
+  .row .point.square {
+    border-radius: 5px;
+  }
+  
+  .row .stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+  }
