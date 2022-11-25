@@ -1,5 +1,6 @@
 import './colors-card.css';
 import Card from '../card/card.component';
+import { DEFAULT_COLOR, SIZE } from '../../data';
 
 const renderCards = (arr) => arr.map((color, index) =>
   <div
@@ -11,10 +12,10 @@ const renderCards = (arr) => arr.map((color, index) =>
 
 const ColorsCard = (props) => {
   let answers;
-  if (props.colors)
+  if (props.colors?.length === SIZE)
     answers = props.colors;
   else
-    answers = new Array(4).fill('#808080');
+    answers = new Array(4).fill(DEFAULT_COLOR);
 
   return (
     <div className='colors-card'>
