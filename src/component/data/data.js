@@ -1,4 +1,4 @@
-// import COLORS from "../color-palette/color";
 
-const COLORS =['red','green','blue','orange','tomato'];
-export  {COLORS};
+const COLORS =['purple','green','blue','orange','tomato'];
+const Size=5;
+export  {COLORS ,Size};
