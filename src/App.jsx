@@ -3,6 +3,8 @@ import { useState } from 'react';
 import AnswerForm from './components/answer-form/answer-form.component';
 import HistoryBlock from './components/history-block/history-block.component';
 import ColorsCard from './components/colors-card/colors-card.component';
+import Header from './components/header/header.component';
+import Question from './components/Question/question.component';
 
 function App() {
   const [currentAnswer, setCurrentAnswer] = useState([]);
@@ -11,26 +13,13 @@ function App() {
   // const: win or not as a useState (add fireworks!)
   return (
     <div className="App">
-      <div className='heading'>
-        <h1>Colors Game</h1>
-        <h2>Steps: {3}</h2>
-      </div>
+      <Header history={history}/>
       <br />
-      <ColorsCard />
+      <Question />
+      <hr />
 
-      <hr
-        style={{
-          width: '100%',
-          backgroundColor: "var(--my-grey)"
-        }}
-      />
-      <HistoryBlock history={history}/>
-      <hr
-        style={{
-          width: '100%',
-          backgroundColor: "var(--my-grey)"
-        }}
-      />
+      <HistoryBlock history={history} />
+      <hr />
 
       <AnswerForm
         currentAnswer={currentAnswer}

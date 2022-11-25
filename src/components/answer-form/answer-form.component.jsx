@@ -1,4 +1,3 @@
-import { logDOM } from '@testing-library/react';
 import ButtonsCard from '../buttons-card/buttons-card.component';
 import ColorsCard from '../colors-card/colors-card.component';
 import './answer-form.css';
@@ -23,7 +22,7 @@ const AnswerForm = (props) => {
   };
   return (
     <div className='answer-form'>
-      <ColorsCard withClearBtn  /> {/* colors={props.currentAnswer} */}
+      <ColorsCard withClearBtn /> {/* colors={props.currentAnswer} */}
       <ButtonsCard onClick={setCurrentAnswer}
         colors={COLORS}
       />

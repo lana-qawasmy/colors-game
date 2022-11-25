@@ -20,27 +20,10 @@ body {
 
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-end; */
-  /* justify-content: space-between; */
 }
 
-.App>.heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-right: 10px;
-  color: #4c4b4b;
-  padding-bottom: -10px;
-  border-bottom: 2px solid #808080;
-}
-
-.App>.heading>h1 {
-  color: #808080;
-  margin-bottom: 0;
-}
-
-.App>.heading>h1,
-.App>.heading>h2 {
-  margin-bottom: 5px;
-
+hr {
+  width: 100%;
+  background-color: var(--my-grey);
+  margin: 15px 0;
 }
