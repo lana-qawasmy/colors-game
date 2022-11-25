@@ -19,11 +19,17 @@ const AnswerForm = (props) => {
         }
     }
 
+    if(props.disable) {
+        return null;
+    }
+
     return (
         <div className="AnswerForm">
             <hr />
-            <span className="empty" onClick={() => setAnswer([])}>X</span>
-            <Row value={currentAnswer} />
+            <div className="answerBlock">
+                <Row value={currentAnswer} />
+                <span className="empty" onClick={() => setAnswer([])}>X</span>
+            </div>
             <div className="color">
                 {COLORS.map(color => <span key={color}
                     style={{ backgroundColor: color }}

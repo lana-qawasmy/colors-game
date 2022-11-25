@@ -72,9 +72,13 @@ function App() {
           <h3>step:{answers.length}</h3>
         </div>
         <hr />
-        <div>
         <Row value={question} hidden={!win} />
-        <button onClick={restartGame}>Restart</button></div>
+        {win && <div>
+          <h1>You have Won!</h1>
+          <button onClick={restartGame}>Restart</button>
+        </div>
+
+        }
         <hr />
         <AnswerList answers={answers} />
         <AnswerForm onAnswerSubmit={handelAnswerSubmit} disable={win} />
