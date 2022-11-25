@@ -1,0 +1,16 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 85%;
+    height: 50vh;
+    max-height: 50vh;
+    overflow-y:scroll ;
+    margin-top: 10px;
+}
+
+.list .colors-box
+{
+    min-height: 70px;
+}
