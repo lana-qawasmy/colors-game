@@ -12,32 +12,35 @@ const AnswerForm=(props)=>{
       if (answer.length >= QUESTION_SIZE) {
           props.onSubmit && props.onSubmit(answer);
           setAnswer([]);
-      }
-      // eslint-disable-next-line
-  }, [answer]);
+      } }, [answer]);
 
-  const handleClick = (color) => {
-      if (answer.length < QUESTION_SIZE) {
+  const handleClick = (color) =>
+   {
+      if (answer.length < QUESTION_SIZE)
+       {
           setAnswer([...answer, color]);
       }
   }
 
     return(
       <div className="answer-form">
-            <button onClick={() => setAnswer([])}>X</button>
+            <button onClick={
+                () => setAnswer([])}> X </button>
+
+
             <div className="row">
+
                 {
-                    points.map((p, ind) =>
-                        <span key={`${p}_${ind}`} className="point" style={{ backgroundColor: answer[ind] || 'grey' }}></span>
+                    points.map
+                    (
+                        (p, ind) =><span key={`${p}_${ind}`} className="point" style={{ backgroundColor: answer[ind] || 'grey' }}></span>
                     )
                 }
                 <div className="stat-placeholder" />
             </div>
             <div className="row answer">
                 {
-                    COLORS.map((c, ind) =>
-                        <span
-                            key={`${c}_${ind}`}
+                    COLORS.map((c, ind) => <span key={`${c}_${ind}`}
                             className="point square"
                             style={{ backgroundColor: c }}
                             onClick={() => handleClick(c)}
