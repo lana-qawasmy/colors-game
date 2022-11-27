@@ -1,25 +1,23 @@
 import "./circle-panel.css";
 
-const initalColors = new Array(4).fill('grey');
-
 const CirlcePanel = (props) => {
   return (
     <div className="circle-panel">
-      {initalColors.map((color, index) => {
+      {props.value.map((color, index) => (
         <span
-          key={color + index}
+          key={color + "_" + index}
           className="circle"
-          style={{
-            backgroundColor: (!props.hidden && props.value[index]) || color
-          }}
-        ></span>;
-      })}
-      {props.calcs && (
+          style={{ backgroundColor: props.hidden ? "grey" : color }}
+        ></span>
+      ))}
+      {!props.question ? (
         <span className="calcs">
           CC: {props.calcs.cc}
           <br />
           CR: {props.calcs.cr}
         </span>
+      ) : (
+        <div className="calcs"></div>
       )}
     </div>
   );

@@ -1,34 +1,43 @@
 import { useState, useEffect } from "react";
 import CirlcePanel from "../circle-panel/circle-panel.component";
 import "./color-panel.css";
-import { COLORS } from "../data/data";
+import { COLORS, SIZE } from "../data/data";
 
 const ColorPanel = (props) => {
-  const [currentRow, setCurrentRow] = useState([]);
+  const circles = [...Array(SIZE)];
   const [answer, setAnswer] = useState([]);
 
   useEffect(() => {
-    if (currentRow.length === 4) {
-      props.onAnwerSubmit(currentRow);
+    if (answer.length >= SIZE) {
+      props.onAnswerSubmit && props.onAnswerSubmit(answer);
       setAnswer([]);
     }
-  }, [currentRow]);
+  }, [answer]);
 
   const buttonClicked = (color) => {
-    if (currentRow.length < 4) {
-      setAnswer([...currentRow, color]);
+    if (answer.length < SIZE) {
+      setAnswer([...answer, color]);
     }
   };
   return (
-    <div style={{ pinterEvents: props.disabled ? "none" : "all" }}>
-      <span className="cancel" onClick={() => setAnswer([])}>
+    <div className="main">
+      <button className="cancel" onClick={() => setAnswer([])}>
         X
-      </span>
-      <CirlcePanel value={currentRow}/>
-      <div className="color-panel">
-        {COLORS.map((color) => (
+      </button>
+      <div className="row">
+        {circles.map((c, index) => (
           <span
-            key={color}
+            key={`${c}_${index}`}
+            className="circle"
+            style={{ backgroundColor: answer[index] || "grey" }}
+          ></span>
+        ))}
+        <div className="calcs"></div>
+      </div>
+      <div className="color-panel">
+        {COLORS.map((color, index) => (
+          <span
+            key={`${color}_${index}`}
             className={`box ${color}`}
             style={{ backgroundColor: color }}
             onClick={() => buttonClicked(color)}

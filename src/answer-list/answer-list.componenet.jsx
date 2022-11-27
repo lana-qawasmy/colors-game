@@ -3,9 +3,9 @@ import "./answer-list.css";
 
 const AnswerList = (props) => {
   return (
-    <div className='list'>
-      {props.answers.map((answer, index) => (
-        <CirlcePanel key={answer + index} value={answer} calcs={answer.calcs}/>
+    <div className="list">
+      {props.answers.map((ans, index) => (
+        <CirlcePanel key={ans + index} value={ans.answer} calcs={ans.calcs} />
       ))}
     </div>
   );
