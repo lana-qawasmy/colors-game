@@ -11,12 +11,16 @@ const renderCards = (arr) => arr.map((color, index) =>
 );
 
 const ColorsCard = (props) => {
-  let answers;
-  if (props.colors?.length === SIZE)
-    answers = props.colors;
-  else
-    answers = new Array(4).fill(DEFAULT_COLOR);
 
+  let answers;
+  if (props.colors?.length === SIZE) {
+    console.log('received as : ', props.colors);
+    answers = props.colors;
+  }
+  else {
+    console.log('hhhh', props.colors);
+    answers = new Array(4).fill(DEFAULT_COLOR);
+  }
   return (
     <div className='colors-card'>
       <Card>
