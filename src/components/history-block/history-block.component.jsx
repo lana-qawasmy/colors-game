@@ -19,8 +19,8 @@ const history = [
 const HistoryBlock = (props) => {
   return (
     <div className='history-block'>
-      {props.history?.map((card, index) => <ColorsCard key={"Card_" + Date.now() + index} 
-      stats={card.stats || {cc:0, cr:0}} colors={card.colors} />)}
+      {props.history?.map((card, index) => <ColorsCard key={"Card_" + Date.now() + index}
+        stats={card.stats || { cc: 0, cr: 0 }} colors={card.colors} />)}
     </div>
   );
 };

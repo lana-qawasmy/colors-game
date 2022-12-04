@@ -2,7 +2,7 @@ import ColorsCard from "../colors-card/colors-card.component";
 
 const Question = (props) => {
   return (
-    <ColorsCard />
+    <ColorsCard colors={[]} />
   );
 };
 export default Question;

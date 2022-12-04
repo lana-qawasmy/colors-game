@@ -11,6 +11,7 @@
   width: 50px;
   height: 50px;
   border: 1px solid #808080;
+  background-color: grey;
   margin: 0 12px;
   border-radius: var(--circle-radius);
   box-shadow: 1px 1px 3px var(--my-grey);
