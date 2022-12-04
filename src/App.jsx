@@ -4,6 +4,10 @@ import AnswerForm from './components/answer-form/answer-form.component';
 import HistoryBlock from './components/history-block/history-block.component';
 import Header from './components/header/header.component';
 import Question from './components/Question/question.component';
+import { qGenerator } from './calculations';
+
+const trueAnswer =  qGenerator();
+console.log('trueAnswer', trueAnswer)
 
 function App() {
   const [currentAnswer, setCurrentAnswer] = useState([]);
@@ -14,7 +18,7 @@ function App() {
     <div className="App">
       <Header history={history}/>
       <br />
-      <Question />
+      <Question colors={trueAnswer}/>
       <hr />
 
       <HistoryBlock history={history} />
