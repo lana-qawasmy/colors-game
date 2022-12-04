@@ -12,7 +12,7 @@ const ColorsCard = (props) => {
             <div
               className='circle'
               key={"color_" + Date.now() + index}
-              style={{ backgroundColor: props.colors[index] || defaultColor }}
+              style={{ backgroundColor: !props.hide && (props.colors[index] || defaultColor) }}
             />)
         }
         {props.stats && <div className='stats'>
