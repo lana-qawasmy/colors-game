@@ -21,7 +21,12 @@ const AnswerForm = (props) => {
 
   return (
     <div className='answer-form'>
-      <ColorsCard withClearBtn colors={props.currentAnswer} />
+      <ColorsCard 
+      withClearBtn
+       colors={props.currentAnswer} 
+       onClick = {() => props.setCurrentAnswer([])}
+       />
+
       <ButtonsCard
         colors={COLORS}
         onClick={setCurrentAnswer}

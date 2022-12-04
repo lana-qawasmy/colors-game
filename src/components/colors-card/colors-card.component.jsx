@@ -6,7 +6,12 @@ const ColorsCard = (props) => {
   return (
     <div className='colors-card'>
       <Card>
-        {props.withClearBtn && <button className='clear-btn'>x</button>}
+        {props.withClearBtn && <button
+          className='clear-btn'
+          onClick={() => {props.onClick()}}
+        >
+          x
+        </button>}
         {
           Array(SIZE).fill(DEFAULT_COLOR).map((defaultColor, index) =>
             <div
