@@ -5,22 +5,19 @@ import HistoryBlock from './components/history-block/history-block.component';
 import Header from './components/header/header.component';
 import Question from './components/Question/question.component';
 import { qGenerator, compare } from './calculations';
-import { useEffect } from 'react';
-
-const trueAnswer = qGenerator();
-console.log('trueAnswer', trueAnswer);
 
 function App() {
+  const [trueAnswer, setTrueAnswer] = useState(qGenerator());
   const [currentAnswer, setCurrentAnswer] = useState([]);
   const [history, setHistory] = useState([]);
   const [win, setWin] = useState(false);                    // (add fireworks!)
 
+  console.log('trueAnswer', trueAnswer);
   const checkWin = (userAns) => {
     if (compare(trueAnswer, userAns)) {
       setWin(true);
-      alert('YOU WIN!');
     }
-  }
+  };
 
   return (
     <div className="App">
@@ -31,6 +28,19 @@ function App() {
         win={win}
         setWin={setWin}
       />
+      {win && <div className='you-win-block'>
+        <span className="correct">Correct Answer!</span>
+        <button
+          className='play-again-btn'
+          onClick={() => {
+            setTrueAnswer(qGenerator());
+            setHistory([]);
+            setWin(false);
+          }}
+        >
+          Play Again
+        </button>
+      </div>}
       <hr />
 
       <HistoryBlock history={history} />
@@ -42,7 +52,7 @@ function App() {
         setCurrentAnswer={setCurrentAnswer}
         history={history}
         setHistory={setHistory} />
-    </div>
+    </div >
   );
 }
 
