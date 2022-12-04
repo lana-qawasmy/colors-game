@@ -47,6 +47,7 @@ function App() {
       <hr />
 
       <AnswerForm
+        trueAnswer={trueAnswer}
         checkWin={checkWin}
         currentAnswer={currentAnswer}
         setCurrentAnswer={setCurrentAnswer}
