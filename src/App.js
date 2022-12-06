@@ -7,7 +7,7 @@ import { COLORS, SIZE } from "./data/data";
 
 function App() {
   const [won, setWon] = useState(false);
-  const [answer, setAnswer] = useState([]);
+  const [answers, setAnswer] = useState([]);
   const [theQuestion, setTheQuestion] = useState(["red", "green", "blue", "black", "purple", "yellow"]);
 
   useEffect(() => {
@@ -66,14 +66,14 @@ function App() {
       <div className="container">
         <div className="header">
           <h1>Colors Game</h1>
-          <h2>Steps: {answer.length}</h2>
+          <h2>Steps: {answers.length}</h2>
         </div>
         <hr />
         <AnswerPanel
-          colors={theQuestion}
+          value={theQuestion}
           hidden={!won}
-          answers={answer}
           question
+          answers={answers}
         />
         {won && (
           <div className="won">
@@ -84,7 +84,7 @@ function App() {
           </div>
         )}
         <hr></hr>
-        <AnswerList answers={answer} />
+        <AnswerList answers={answers} />
         <hr />
         <ColorPanel onAnswerSubmit={submitAnswer} />
       </div>

@@ -4,7 +4,7 @@ const AnswerPanel = (props) => {
   console.log(props.colors);
   return (
     <div className="answer-panel">
-      {props.colors.map((color, index) => (
+      {props.value.map((color, index) => (
         <span
           key={color + "_" + index}
           className="answer"
