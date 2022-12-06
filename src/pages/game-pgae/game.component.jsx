@@ -1,57 +1,52 @@
 import "./game.css";
-import ItemContainer from "../../components/items-container/items-container.component";
+import ItemContainer from "../../components/items-container/item-container.component";
 import { useEffect, useState } from "react";
 import Header from "../../components/header/header.component";
 import { COLORS } from "../../data/data";
+import { generateRandomNumberArray } from "../../utils/game.util";
+import { useRef } from "react";
 
 const GamePage = () => {
-  const generateRandomNumberArray = () => {
-    let arr = [];
-    for (let i = 0; i < 4; i++) {
-      arr.push(COLORS[Math.floor(Math.random() * COLORS.length)]);
-    }
-    return arr;
-  };
 
-  const question = generateRandomNumberArray();
-  console.log(`q ${question}`)
+  const question = useRef(generateRandomNumberArray());
   const [answers, setAnswers] = useState([]);
-  const [selected, setSelected] = useState([
-    `#ACACAC`,
-    `#ACACAC`,
-    `#ACACAC`,
-    `#ACACAC`,
-  ]);
+  const [selected, setSelected] = useState([null, null, null, null]);
 
-  useEffect(() => {}, []);
+  const countCC = (arr) => {
+    let cc = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] == question.current[i]) cc++;
+    }
+    return cc;
+  }
+
+  const countCR = (arr) => {
+    let cr = 0;
+    const checkQuestion = [...question.current];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] == checkQuestion[i]) continue;
+      for (let j = 0; j < checkQuestion.length; j++) {
+        if (i == j || checkQuestion[j] == null) continue;
+        if (arr[i] == checkQuestion[j]) {
+          checkQuestion[j] = null;
+          cr++;
+        }
+      }
+    }
+    return cr;
+  }
 
   useEffect(() => {
     const checkValid = (a, b) => {
-        if (a.length != b.length) return false;
-        for (let i = 0; i < a.length; i++) {
-            if (a[i] != b[i]) return false;
-        }
-        return true;
+      if (a.length != b.length) return false;
+      for (let i = 0; i < a.length; i++) {
+        if (a[i] != b[i]) return false;
+      }
+      return true;
     }
-
-    const getArrayDifference = () => {
-        let cc = 0, cr = 0;
-        for (let i = 0; i < selected.length; i++) {
-            if (selected[i] == question[i]) cc++;
-        }
-        for (let i = 0; i < answers.length; i++) {
-            for (let j = 0; j < selected.length; j++) {
-              if (i == j) continue;
-                if (answers[i] == selected[j]) cr++;
-            }
-        }
-        return [cc, cr];
-    }
-
-    const [cc, cr] = getArrayDifference();
-    if (!selected.some((color) => color == `#ACACAC`)) {
-      setAnswers([...answers, selected]);
-      setSelected([`#ACACAC`, `#ACACAC`, `#ACACAC`, `#ACACAC`]);
+    if (!selected.some((color) => color == null)) {
+      setAnswers([selected, ...answers]);
+      setSelected([null, null, null, null]);
     }
   }, [selected]);
 
@@ -64,10 +59,10 @@ const GamePage = () => {
   return (
     <div className="game-container">
       <Header steps={answers.length}></Header>
-      <ItemContainer colors={selected}></ItemContainer>
+      <ItemContainer colors={[null, null, null, null]}></ItemContainer>
       <div className="slider">
         {answers.map((answer) => (
-          <ItemContainer colors={answer} cc={1} cr={2}></ItemContainer>
+          <ItemContainer key={(Math.floor(Math.random()*10000)).toString()} colors={answer} cc={countCC(answer)} cr={countCR(answer)}></ItemContainer>
         ))}
       </div>
       <ItemContainer colors={selected}></ItemContainer>
