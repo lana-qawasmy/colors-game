@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import CirlcePanel from "../circle-panel/circle-panel.component";
+import AnswerPanel from "../answer-panel/answer-panel.component";
 import "./color-panel.css";
 import { COLORS, SIZE } from "../data/data";
 
 const ColorPanel = (props) => {
-  const circles = [...Array(SIZE)];
+  const colorFields = [...Array(SIZE)];
   const [answer, setAnswer] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const ColorPanel = (props) => {
     }
   }, [answer]);
 
-  const buttonClicked = (color) => {
+  const chooseColor = (color) => {
     if (answer.length < SIZE) {
       setAnswer([...answer, color]);
     }
@@ -25,14 +25,14 @@ const ColorPanel = (props) => {
         X
       </button>
       <div className="row">
-        {circles.map((c, index) => (
+        {colorFields.map((c, index) => (
           <span
             key={`${c}_${index}`}
-            className="circle"
+            className="color-field"
             style={{ backgroundColor: answer[index] || "grey" }}
           ></span>
         ))}
-        <div className="calcs"></div>
+        <div className="statistics"></div>
       </div>
       <div className="color-panel">
         {COLORS.map((color, index) => (
@@ -40,7 +40,7 @@ const ColorPanel = (props) => {
             key={`${color}_${index}`}
             className={`box ${color}`}
             style={{ backgroundColor: color }}
-            onClick={() => buttonClicked(color)}
+            onClick={() => chooseColor(color)}
           />
         ))}
       </div>

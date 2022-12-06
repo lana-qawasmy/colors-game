@@ -1,4 +1,4 @@
-const COLORS = ["red", "green", "blue", "black", "purple", "yellow"];
+const COLORS = ["red", "green", "blue", "orange", "purple", "yellow"];
 
 const SIZE = 5;
 

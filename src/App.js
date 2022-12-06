@@ -1,42 +1,34 @@
 import "./App.css";
 import ColorPanel from "./colors-panel/colors-panel.component";
-import CirlcePanel from "./circle-panel/circle-panel.component";
+import AnswerPanel from "./answer-panel/answer-panel.component";
 import { useState, useEffect } from "react";
 import AnswerList from "./answer-list/answer-list.componenet";
 import { COLORS, SIZE } from "./data/data";
 
 function App() {
   const [won, setWon] = useState(false);
-  const [answers, setAnswers] = useState([]);
-  const [question, setQuestion] = useState([
-    "red",
-    "green",
-    "blue",
-    "black",
-    "purple",
-    "yellow",
-  ]);
+  const [answer, setAnswer] = useState([]);
+  const [theQuestion, setTheQuestion] = useState(["red", "green", "blue", "black", "purple", "yellow"]);
 
   useEffect(() => {
-    buildNewQuestion();
+    newQuestion();
   }, []);
 
-  const buildNewQuestion = () => {
+  const newQuestion = () => {
     const newQuestion = [];
     for (let i = 0; i < 5; i++) {
       newQuestion.push(COLORS[Math.floor((Math.random() * 6) % COLORS.length)]);
     }
-    setQuestion(newQuestion);
+    setTheQuestion(newQuestion);
   };
-
-  const checkAnswer = (answer) => {
+  const checkForCorrectAnswer = (answer) => {
     let cc = 0,
       cr = 0;
 
     const map = {};
-    for (let i = 0; i < question.length; i++) {
-      if (!map[question[i]]) map[question[i]] = 0;
-      map[question[i]]++;
+    for (let i = 0; i < theQuestion.length; i++) {
+      if (!map[theQuestion[i]]) map[theQuestion[i]] = 0;
+      map[theQuestion[i]]++;
     }
 
     for (let i = 0; i < answer.length; i++) {
@@ -47,7 +39,7 @@ function App() {
     }
 
     for (let i = 0; i < answer.length; i++) {
-      if (question[i] === answer[i]) {
+      if (theQuestion[i] === answer[i]) {
         cc += 1;
         cr--;
       }
@@ -55,9 +47,9 @@ function App() {
     return { cc, cr };
   };
 
-  const handleAnswerSubmit = (answer) => {
-    const result = checkAnswer(answer);
-    setAnswers([{ answer, calcs: result }, ...answers]);
+  const submitAnswer = (answer) => {
+    const result = checkForCorrectAnswer(answer);
+    setAnswer([{ answer, statistics: result }, ...answer]);
     if (result.cc === SIZE) {
       setWon(true);
     }
@@ -65,24 +57,23 @@ function App() {
 
   const playAgain = () => {
     setWon(false);
-    setAnswers([]);
-    buildNewQuestion();
+    setAnswer([]);
+    newQuestion();
   };
 
-  console.log(won);
   return (
     <div className="App">
       <div className="container">
         <div className="header">
           <h1>Colors Game</h1>
-          <h2>Steps: {answers.length}</h2>
+          <h2>Steps: {answer.length}</h2>
         </div>
         <hr />
-        <CirlcePanel
-          value={question}
+        <AnswerPanel
+          colors={theQuestion}
           hidden={!won}
+          answers={answer}
           question
-          answers={answers}
         />
         {won && (
           <div className="won">
@@ -93,9 +84,9 @@ function App() {
           </div>
         )}
         <hr></hr>
-        <AnswerList answers={answers} />
+        <AnswerList answers={answer} />
         <hr />
-        <ColorPanel onAnswerSubmit={handleAnswerSubmit} />
+        <ColorPanel onAnswerSubmit={submitAnswer} />
       </div>
     </div>
   );

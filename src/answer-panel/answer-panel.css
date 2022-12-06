@@ -1,0 +1,21 @@
+.answer-panel {
+  display: flex;
+  background-color: #e6e6e6;
+  gap: 1px;
+  border: 1px solid rgb(99, 99, 99);
+  padding: 10px;
+  width: 80%;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  margin-left: 30px;
+
+}
+.answer-panel .answer {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.statistics {
+  margin-left: 5px;
+}
