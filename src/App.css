@@ -1,38 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.container {
+  background-color: #d5d0c8;
+  padding: 10px;
+}
+
+button {
+background-color: #d83f3f;
+  border: 1px solid #d83f3f;
+  padding: 5px 15px;
+  cursor: pointer;
   color: white;
+  font-size: 15px;
+}
+button:hover{
+  background-color: #cc6f6f;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 20px;
+  font-family: cursive;
+  color: #4b0fdbad;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cell,
+.cell-border {
+  width: 35px;
+  height: 35px;
+  color: currentcolor;
+  display: inline-flex;
+  border-radius: 24px;
+}
+
+.choices {
+  border: 1px solid black;
+  width: max-content;
+  height: 45px;
+  margin-top: 10px;
+}
+
+.AnswerForm {
+  display: inline-block;
 }

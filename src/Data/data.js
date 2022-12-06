@@ -1,4 +1,4 @@
-const COLORS = ["red", "green", "blue", "yellow", "orange"];
+const colors = ["red", "green", "blue", "yellow", "orange"];
 
 
 

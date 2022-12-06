@@ -44,7 +44,7 @@ const checkAnswer = (answer) =>{
   }
 
   for (let i = 0; i < answer.length; i++) {
-    if (question[i] === answer[i]) {
+    if (qustion[i] === answer[i]) {
       cc += 1;
       cr--;
     }
@@ -74,7 +74,7 @@ return (
         <h3>step:{answers.length}</h3>
       </div>
       <hr />
-      <Row value={question} hidden={!win} />
+      <Row value={qustion} hidden={!win} />
       {win && <div>
         <h1>You have Won!</h1>
         <button onClick={restartGame}>Restart</button>

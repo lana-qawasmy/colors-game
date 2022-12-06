@@ -2,16 +2,15 @@ import React from "react";
 import './answer_list.css';
 import Row from "../Row/row.component";
 
-const List = (props) =>{
+const List = (props) => {
     return (
-        <div className="answerList">
+        <div className="answer-list">
             {
-                props.answers.map((answer,index) =>
-                <Row key={answer + id} value={answer}/>)
+                props.answers.map((ans, index) => <Row key={"ans_" + index} value={ans.answer} calcs={ans.calcs} />)
             }
-
         </div>
     )
 }
+
 
 export default List
