@@ -7,4 +7,9 @@ const COLORS = [
     'orange'
 ];
 
-export default COLORS;
+const SIZE = 5;
+
+export {
+    COLORS,
+    SIZE
+};
