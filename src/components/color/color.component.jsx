@@ -1,6 +1,6 @@
 import './color.css'
 
-const Color = ({ squared, color, setSelected, selected }) => {
+const Color = ({ squared, color, setSelected, selected, isWin }) => {
     const addSelected = (color) => {
         const newSelected = [...selected];
         for (let i = 0; i < newSelected.length; i++) {
@@ -11,12 +11,11 @@ const Color = ({ squared, color, setSelected, selected }) => {
         }
         setSelected(newSelected);
     };
-
     return (
         <div
             onClick={() => { if (setSelected != null) addSelected(color) }}
             style={{ backgroundColor: color, borderRadius: (squared ? `5px` : `100px`) }}
-            className='color'>
+            className={`color`}>
         </div>
     )
 }

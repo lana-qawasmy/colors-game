@@ -10,6 +10,20 @@
     padding: 15px;
 }
 
+.game-container .play-again-container {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.game-container .play-again-container .play-again {
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #e7f7f8;
+    cursor: pointer;
+}
+
 .game-container > .slider {
     display: flex;
     flex-direction: column;
