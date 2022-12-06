@@ -8,7 +8,7 @@ import { COLORS, SIZE } from "./data/data";
 function App() {
   const [won, setWon] = useState(false);
   const [answers, setAnswer] = useState([]);
-  const [theQuestion, setTheQuestion] = useState(["red", "green", "blue", "black", "purple", "yellow"]);
+  const [theQuestion, setTheQuestion] = useState(["red", "green", "blue", "orange", "purple", "yellow"]);
 
   useEffect(() => {
     newQuestion();
