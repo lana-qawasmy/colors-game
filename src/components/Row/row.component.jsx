@@ -1,11 +1,21 @@
 import React from "react";
 import './row.css';
-import answerList from "../AnswerList/answer_list.component";
 
-const Row = () =>{
+const array = new Array(4).fill('gray');
+
+const Row = (props) =>{
     return (
-        <div>Row
-<answerList/>
+        <div className="row">
+            {
+                array.map((color,index) =>
+                <span className="cell" key={color+index} style={{backgroundColor:color}}/>
+
+                )
+            }
+              {props.calcs && (<span className="calcs">CC: {props.calcs.cc}<br />CR: {props.calcs.cr}</span>
+            )}
+
+
         </div>
     )
 }
