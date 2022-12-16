@@ -1,4 +1,4 @@
-.answerList {
+.list {
     display: flex;
     flex-direction: column;
     max-height: 30vh;

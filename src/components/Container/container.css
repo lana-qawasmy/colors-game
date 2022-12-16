@@ -1,4 +1,4 @@
-.color {
+.colorRow {
     border: 1px solid #6c6060;
     padding: 10px;
     width: 307px;
@@ -8,11 +8,11 @@
     margin: auto;
 }
 
-.answerBlock {
+.RowForSubmit {
     position: relative;
 }
 
-.color-border {
+.squarColorBorder {
     width: 35px;
     height: 35px;
     color: currentcolor;
@@ -21,7 +21,7 @@
     margin: 5px 10px;
 }
 
-.empty {
+.clear {
     position: absolute;
     top: -5px;
     right: -5px;
