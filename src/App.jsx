@@ -72,7 +72,7 @@ function App() {
     <div className="App">
       <div className='container'>
         <Hedear answers={answers} />
-        <Row value={qustion} />
+        <Row value={qustion} hidden={!win} />
         <Win win={win} setAnswers={setAnswers} setWin={setWin} />
         <List answers={answers} />
         <Form SubmitAnswer={handleAnswer} />

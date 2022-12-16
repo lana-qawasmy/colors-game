@@ -10,7 +10,7 @@ const Row = (props) => {
                     <span
                         className="cell"
                         key={"color" + index}
-                        style={{ backgroundColor: props.value[index] || color }} />
+                        style={{ backgroundColor: !props.hidden && props.value[index] || color }} />
                 ))
             }
 
