@@ -1,0 +1,7 @@
+.tries-container{
+    margin: 10px;
+    width: 90%;
+    background-color: limegreen;
+    height: 90%;
+    overflow: auto;
+}

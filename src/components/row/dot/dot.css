@@ -1,0 +1,20 @@
+.dot{
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.dot:active{
+    transform: scale(1.1);
+}
+
+.disabled-dot{
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+}

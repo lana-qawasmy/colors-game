@@ -1,0 +1,9 @@
+.row{
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 2.2em;
+    border-radius: 20px;
+    border: solid 2px gray;
+    margin-bottom: 10px;
+}
