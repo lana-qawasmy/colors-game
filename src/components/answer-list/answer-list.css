@@ -1,0 +1,10 @@
+.answers {
+    display: flex;
+    max-height: 30vh;
+    min-height: 35vh;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    flex-direction: column;
+
+}

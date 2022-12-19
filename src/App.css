@@ -1,29 +1,29 @@
+#root,.App,body,html {
+  height: 100%;
+}
+
+#root {
+  justify-content: center;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 100%;
+}
+
 .App {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 70px 716px;
-  border: 1px solid #000;
-  width: 470px;
-  height: 750px;
-  display: inline-block;
-  background: rgb(175 229 245 / 24%);
+  justify-content: center;
+   padding: 20px;
+
 }
 
-.rect {
-  width: 400px;
-  height: 68px;
+.App .container {
+  background-color: #f0f8ff;
+  max-width: 400px;
+  justify-content: flex-start;
+  padding: 20px;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 2px solid #e3e3e3;
   border-radius: 10px;
-  border: 1px solid #000;
-  margin: 33px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-
-
-}
-
-.circles{
-  border: 50%;
-  background-color: gray;
 }
