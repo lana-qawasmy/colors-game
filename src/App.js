@@ -3,6 +3,8 @@ import ColorState from './component/colorState/ColorState.jsx';
 import AnswerList from './component/answer/AnswerList';
 import React, { useState } from 'react'
 import './App.css';
+import Result from './component/result/Result.jsx';
+import Step from './component/Header/Step.header.jsx';
 
 function App() {
   const [answer , setAnswer] = useState([]);
@@ -11,6 +13,8 @@ function App() {
     <div className="App">
       <ColorState answer={answer} setAnswer={setAnswer}/>
       <AnswerList answer={answer} />
+      <Result answer={answer}/>
+      <Step/>
     </div>
   );
 }

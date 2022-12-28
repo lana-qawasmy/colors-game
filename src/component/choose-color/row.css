@@ -1,7 +1,7 @@
 .colorChoice{
     width: 300px;
     height: 40px;
-    border: 1px solid black;
+    border: 1px solid rgb(166, 167, 168);
     border-radius: 5px;
     display: flex ;
     justify-content: space-around;

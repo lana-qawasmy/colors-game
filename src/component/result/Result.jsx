@@ -1,11 +1,12 @@
 import React from 'react'
+import Row from '../choose-color/Row';
 import './result.css';
 
-const Result = () => {
+const Result = (props) => {
   return (
-    <div>
-      
-    </div>
+   <div className="result">
+       <Row value={props.answer}/>
+   </div>
   )
 }
 
