@@ -11,9 +11,12 @@
 
 .Color1 {
     display: flex ;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    height: 98px;
+    position: relative;
+   
 }
 
 .color-choice{
@@ -28,6 +31,13 @@
     box-shadow: 1px 1px rgba(94, 95, 99, 0.484);
 }
 .Empty{
-    margin-left: 300px;
-    margin-top: 20px;
+    position: absolute;
+    top: -6px;
+    right: 11px;
+    font-size: 12px;
+    border-radius: 32px;
+    width: 17px;
+    background-color: #e5361f;
+    height: 17px;
+    text-align: center;
 }

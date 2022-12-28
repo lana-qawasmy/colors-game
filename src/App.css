@@ -1,9 +1,9 @@
 .App {
   display: flex;
-  width: 400px;
-  height: 500px;
-  margin-left: 100px;
-  justify-content: flex-start;
+  width: 330px;
+  height: 600px;
+  margin-left: 500px;
   flex-direction: column-reverse;
   border: 1px solid black;
+  gap: 15px;
 }

@@ -1,8 +1,8 @@
 import React from 'react'
-import './hide.css'
+import './row.css'
 
-const Initial =new Array(4).fill('grey'); 
-const Hide = (props) => {
+const Initial = new Array(4).fill('grey'); 
+const Row = (props) => {
   return (
     <div className="colorChoice">
       {
@@ -17,4 +17,4 @@ const Hide = (props) => {
   )
 }
 
-export default Hide
+export default Row;
