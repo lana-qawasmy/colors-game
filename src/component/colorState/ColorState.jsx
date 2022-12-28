@@ -10,8 +10,10 @@ const ColorState = (props) => {
     if (props.answer.length < 4) {
       props.setAnswer([...props.answer, color]);
     }
+    else {
+      props.setAnswer([]);
+    }
   }
-
   return (
     <div className="Color1">
       <span className="Empty" onClick={() => props.setAnswer([])}>X</span>

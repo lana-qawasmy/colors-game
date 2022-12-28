@@ -4,6 +4,7 @@
   height: 550px;
   margin-left: 500px;
   flex-direction: column-reverse;
-  border: 1px solid black;
+  border: 2px solid rgb(194, 198, 201);
+  border-radius: 7px;
   gap: 15px;
 }

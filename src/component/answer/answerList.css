@@ -20,4 +20,5 @@
     width: 328px;
     height: 300px;
     border: 1px solid rgb(205, 208, 210);
+    overflow: scroll;
 }
