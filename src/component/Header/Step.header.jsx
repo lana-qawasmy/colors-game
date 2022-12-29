@@ -1,14 +1,14 @@
 import React from 'react'
 import './header.css'
 
-const Step = () => {
+const Step = (props) => {
   return (
     <div className="header">
           <span>
          Color Game 
         </span>
         <span >
-          Step : 0
+          Step : {props.step}
         </span>
     </div>
   )

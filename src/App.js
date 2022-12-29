@@ -15,7 +15,7 @@ function App() {
       <ColorState answer={answer} setAnswer={setAnswer} answerList={answerList} setAnswerList={setAnswerList}/>
       <AnswerList answerList={answerList} setAnswerList={setAnswerList} />
       <Result answer={answer}/>
-      <Step/>
+      <Step step={answerList.length}/>
     </div>
   );
 }
