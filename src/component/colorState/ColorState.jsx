@@ -11,6 +11,10 @@ const ColorState = (props) => {
       props.setAnswer([...props.answer, color]);
     }
     else {
+      props.setAnswerList([...props.answerList , props.answer])
+      console.log('====================================');
+      console.log(props.answerList);
+      console.log('====================================');
       props.setAnswer([]);
     }
   }

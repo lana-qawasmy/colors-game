@@ -8,11 +8,12 @@ import Step from './component/Header/Step.header.jsx';
 
 function App() {
   const [answer , setAnswer] = useState([]);
+  const [answerList , setAnswerList] = useState([]);
   
   return (
     <div className="App">
-      <ColorState answer={answer} setAnswer={setAnswer}/>
-      <AnswerList answer={answer} />
+      <ColorState answer={answer} setAnswer={setAnswer} answerList={answerList} setAnswerList={setAnswerList}/>
+      <AnswerList answerList={answerList} setAnswerList={setAnswerList} />
       <Result answer={answer}/>
       <Step/>
     </div>
