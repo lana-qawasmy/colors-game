@@ -12,6 +12,7 @@ const Row = (props) => {
          style={{backgroundColor: props.value[indx] || color}}
          className="Circle-color"
          ></span>)
+         
       }
     </div>
   )

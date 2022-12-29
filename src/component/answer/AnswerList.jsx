@@ -8,9 +8,10 @@ const AnswerList = (props) => {
     <div className="answer-row">
      {  
        props.answerList.map(color => 
-        <Row value={color}/>
+        <Row value={color}/> 
+        
         )
-     }
+      }
     </div>
   )
 }
