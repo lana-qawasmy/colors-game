@@ -1,11 +1,15 @@
 .App {
   display: flex;
-  width: 330px;
-  height: 550px;
+  width: 346px;
+  height: 590px;
   margin-left: 500px;
+  justify-content: space-evenly;
   flex-direction: column-reverse;
   border: 2px solid rgb(194, 198, 201);
   border-radius: 7px;
   gap: 15px;
   padding: 10px;
+  background-color: #dcf1f1;
+  margin-top: 104px;
+
 }

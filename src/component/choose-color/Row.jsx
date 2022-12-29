@@ -13,7 +13,10 @@ const Row = (props) => {
          className="Circle-color"
          ></span>)
          
-      }
+         
+        }
+        <span>CC : {props.CC}</span>
+        
     </div>
   )
 }

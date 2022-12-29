@@ -3,11 +3,11 @@ import Row from '../choose-color/Row';
 import './result.css';
 
 const Result = (props) => {
-  const hideRightAnswer = new Array(4).fill("blue" , "red" , "yellow" , "orange");
+  // const hideRightAnswer = new Array(4).fill("blue" , "red" , "yellow" , "orange");
 
   return (
    <div className="result">
-       <Row value={hideRightAnswer}/>
+       <Row value={props.question} cc={props.cC}/>
    </div>
   )
 }
