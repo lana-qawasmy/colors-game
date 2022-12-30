@@ -10,9 +10,7 @@ function App() {
   const [answer , setAnswer] = useState([]);
   const [answerList , setAnswerList] = useState([]);
   const [question , setQuestion] = useState([]);
-  const [win , setWin] = useState(false);
-  const [stats , setStats] = useState ({cc: 0 , cr: 0}) ;  
-
+  
   useEffect(() => {
     let tempQuestins = [];
     for (let i = 0; i < 4; i++) {
@@ -21,42 +19,17 @@ function App() {
     }
     setQuestion(tempQuestins);
  
-  }, [win])
-
-  const checkAnswer = (answer) => {
-    let cc = 0, cr = 0;
-
-    const map = {};
-    for (let i = 0; i < question.length; i++) {
-      if (!map[question[i]])
-        map[question[i]] = 0;
-      map[question[i]]++;
-    }
-
-    for (let i = 0; i < answer.length; i++) {
-      if (map[answer[i]]) {
-        cr += 1;
-        map[answer[i]]--;
-      }
-    }
-
-    for (let i = 0; i < answer.length; i++) {
-      if (question[i] === answer[i]) {
-        cc += 1;
-        cr--;
-      }
-    }
-    return { cc, cr }
-  }
-  const state = checkAnswer(answer);
-  console.log('====================================');
-  console.log(state.cc);
-  console.log('====================================');
+  }, [])
+   console.log("answerList" , answerList);
+  
   return (
     <div className="App">
-      <ColorState answer={answer} setAnswer={setAnswer} answerList={answerList} setAnswerList={setAnswerList}/>
-      <AnswerList answerList={answerList} setAnswerList={setAnswerList} />
-      <Result question={question} cC={state.cc}/>
+      <ColorState answer={answer} setAnswer={setAnswer} 
+      answerList={answerList} setAnswerList={setAnswerList}
+      question={question} setQuestion={setQuestion}
+      />
+      <AnswerList answerList={answerList} setAnswerList={setAnswerList}/>
+      <Result question={question} answerList={answerList}/>
       <Step step={answerList.length}/>
 
     </div>

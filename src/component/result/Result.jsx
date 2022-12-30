@@ -4,10 +4,10 @@ import './result.css';
 
 const Result = (props) => {
   // const hideRightAnswer = new Array(4).fill("blue" , "red" , "yellow" , "orange");
-
+ 
   return (
    <div className="result">
-       <Row value={props.question} cc={props.cC}/>
+       <Row value={props.question} answerList={props.answerList}/>
    </div>
   )
 }

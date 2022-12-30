@@ -3,6 +3,7 @@ import './row.css'
 
 const Initial = new Array(4).fill('grey'); 
 const Row = (props) => {
+  
   return (
     <div className="colorChoice">
       {
@@ -15,7 +16,9 @@ const Row = (props) => {
          
          
         }
-        <span>CC : {props.CC}</span>
+        <span>CC : {props.cc}</span>
+        <span>CW : {props.cr}</span>
+       
         
     </div>
   )
