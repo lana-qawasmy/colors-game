@@ -49,8 +49,7 @@ const ColorState = ({answer,setAnswer,answerList,setAnswerList,question,setQuest
       setAnswer([...answer, color]);
     }
     else {
-      setAnswerList([...answerList , answer])
-      setWin(true);
+      setAnswerList([ {state : state , answer} ,...answerList])
       console.log(answerList);
       setAnswer([]);
     }
@@ -60,9 +59,6 @@ const ColorState = ({answer,setAnswer,answerList,setAnswerList,question,setQuest
     <div className="Color1">  
       <span className="Empty" onClick={() => setAnswer([])}>X</span>
       <Row value={answer} cc={state.cc} cr={state.cr}/>
-      {
-        win && alert("win")
-      }
       <div className="Color">
         {COLORS.map(color => <span key={color}
           style={{ backgroundColor: color }}
