@@ -55,7 +55,7 @@ const ColorState = ({answer,setAnswer,answerList,setAnswerList,question,setQuest
   return (
     <div className="Color1">  
       <span className="Empty" onClick={() => setAnswer([])}>X</span>
-      <Row value={answer}/>
+      <Row value={answer} state={answerList.state}/>
       <div className="Color">
         {COLORS.map(color => <span key={color}
           style={{ backgroundColor: color }}

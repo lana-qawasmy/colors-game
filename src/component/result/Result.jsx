@@ -7,7 +7,7 @@ const Result = (props) => {
  
   return (
    <div className="result">
-       <Row value={props.question} answerList={props.answerList} status={props.answerList.state}/>
+       <Row value={props.question} answerList={props.answerList} state={props.answerList.state}/>
    </div>
   )
 }
