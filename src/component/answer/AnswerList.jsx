@@ -7,8 +7,8 @@ const AnswerList = (props) => {
   return (
     <div className="answer-row">
      {  
-       props.answerList.map(color => 
-        <Row value={color.answer} stat={color.state}/>
+       props.answerList.map((color , ind) => 
+        <Row value={color.answer} key={ind}state={color.state}/>
         )
       }
     </div>

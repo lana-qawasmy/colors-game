@@ -16,8 +16,8 @@ const Row = (props) => {
          
          
         }
-        <span>CC : {props.cc}</span>
-        <span>CW : {props.cr}</span>
+        <span>CC : {props.state.cc}</span>
+        <span>CW : {props.state.cr}</span>
        
         
     </div>

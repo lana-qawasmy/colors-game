@@ -20,7 +20,7 @@ function App() {
     setQuestion(tempQuestins);
  
   }, [])
-
+  console.log(answerList);
   return (
     <div className="App">
       <ColorState answer={answer} setAnswer={setAnswer} 
