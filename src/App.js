@@ -20,15 +20,14 @@ function App() {
     setQuestion(tempQuestins);
  
   }, [])
-   console.log("answerList" , answerList);
-  
+
   return (
     <div className="App">
       <ColorState answer={answer} setAnswer={setAnswer} 
       answerList={answerList} setAnswerList={setAnswerList}
       question={question} setQuestion={setQuestion}
       />
-      <AnswerList answerList={answerList} setAnswerList={setAnswerList}/>
+      <AnswerList answerList={answerList}  setAnswerList={setAnswerList}/>
       <Result question={question} answerList={answerList}/>
       <Step step={answerList.length}/>
 

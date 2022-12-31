@@ -6,8 +6,7 @@ import Row from '../choose-color/Row';
 import './colorState.css';
 
 const ColorState = ({answer,setAnswer,answerList,setAnswerList,question,setQuestion}) => {
-  const [win , setWin] = useState(false);
-  // const [stats , setStats] = useState ({cc: 0 , cr: 0}) ;  
+  const [win , setWin] = useState(false); 
   
   const checkAnswer = (answer) => {
     let cc = 0, cr = 0;
@@ -23,7 +22,6 @@ const ColorState = ({answer,setAnswer,answerList,setAnswerList,question,setQuest
       if (map[answer[i]]) {
         cr += 1;
         map[answer[i]]--;
-        console.log("fdsfsdfs2",cr);
       }
     }
     
@@ -31,26 +29,25 @@ const ColorState = ({answer,setAnswer,answerList,setAnswerList,question,setQuest
       if (question[i] === answer[i]) {
         cc += 1;
         cr--;
-        console.log("fdsfsdfs2",cr);
       }
     }
-    console.log("fdsfsdfs2",cr);
-    console.log("fdsfsdfsque",question);
-    console.log("fdsfsdfsans",answer);
+   
     return { cc, cr }
   }
 
-  const state = checkAnswer(answer);
+ 
 
-  console.log(state);
+  // console.log(state);
   
   const handelColor = (color) => {
     if (answer.length < 4) {
       setAnswer([...answer, color]);
     }
     else {
-      setAnswerList([ {state : state , answer} ,...answerList])
-      console.log(answerList);
+      console.log("answer1" , [...answer]);
+      setAnswerList([ {state : checkAnswer(answer) , answer : [...answer]} ,...answerList])
+      console.log("answer" , [...answer]);
+      console.log("answerList" , answerList);
       setAnswer([]);
     }
   }
@@ -58,7 +55,7 @@ const ColorState = ({answer,setAnswer,answerList,setAnswerList,question,setQuest
   return (
     <div className="Color1">  
       <span className="Empty" onClick={() => setAnswer([])}>X</span>
-      <Row value={answer} cc={state.cc} cr={state.cr}/>
+      <Row value={answer}/>
       <div className="Color">
         {COLORS.map(color => <span key={color}
           style={{ backgroundColor: color }}

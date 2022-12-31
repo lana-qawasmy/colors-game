@@ -2,8 +2,8 @@ import React from 'react'
 import './row.css'
 
 const Initial = new Array(4).fill('grey'); 
-const Row = (props) => {
-  
+const Row = (props) => { 
+  // console.log("value" , props.value);
   return (
     <div className="colorChoice">
       {
