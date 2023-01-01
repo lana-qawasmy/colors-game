@@ -10,16 +10,17 @@ function App() {
   const [answer , setAnswer] = useState([]);
   const [answerList , setAnswerList] = useState([]);
   const [question , setQuestion] = useState([]);
+  const [win , setWin] = useState(false); 
+  const [show ] = useState(false); 
   
   useEffect(() => {
     let tempQuestins = [];
-    for (let i = 0; i < 4; i++) {
-      const index = (Math.floor(Math.random() * 10)) % COLORS.length;
-      tempQuestins.push(COLORS[index]);
-    }
-    setQuestion(tempQuestins);
- 
-  }, [])
+      for (let i = 0; i < 4; i++) {
+        const index = (Math.floor(Math.random() * 10)) % COLORS.length;
+        tempQuestins.push(COLORS[index]);
+      }
+      setQuestion(tempQuestins);
+  }, [win])
   
   const checkAnswer = (answer) => {
     let cc = 0, cr = 0;
@@ -48,18 +49,34 @@ function App() {
     return { cc, cr }
   }
 const state = checkAnswer(answer);
-
+if(state.cc === 3) {
+  setWin(true);
+  setAnswer([]);
+  setAnswerList([]);
+  
+}
   return (
     <div className="App">
       <ColorState answer={answer} setAnswer={setAnswer} 
       answerList={answerList} setAnswerList={setAnswerList}
       question={question} setQuestion={setQuestion}
-      state={state}
+      state={state} show={show}
       />
-      <AnswerList answerList={answerList} state={state} setAnswerList={setAnswerList}/>
-      <Result question={question} answerList={answerList} state={state}/>
+     { !win ? <AnswerList answerList={answerList} state={state} setAnswerList={setAnswerList} show={!show}/>
+     : <div className="winPop">You Win</div> 
+    }
+      <Result win={win} question={question} setAnswerList={setAnswerList} answerList={answerList} state={state} show={show}/>
       <Step step={answerList.length}/>
-
+       
+      
+       
+       {
+        win && <button onClick={()=> {
+          setAnswer([]);
+          setAnswerList([]);
+          setWin(false);
+        }}>play again</button>
+       }
     </div>
   );
 }

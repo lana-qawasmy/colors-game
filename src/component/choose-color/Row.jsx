@@ -17,9 +17,9 @@ const Row = (props) => {
          
          
         }
-        { <span>CC : {props.state.cc}</span>}
-        { <span>CW : {props.state.cr}</span>} 
-       
+        {props.show && <span>CC : {props.state.cc}</span>}
+        {props.show && <span>CW : {props.state.cr}</span>} 
+        
         
     </div>
   )

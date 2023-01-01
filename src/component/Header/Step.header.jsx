@@ -10,6 +10,7 @@ const Step = (props) => {
         <span >
           Step : {props.step}
         </span>
+   
     </div>
   )
 }

@@ -13,3 +13,14 @@
   margin-top: 104px;
 
 }
+
+.App .winPop {
+  height: 31vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #666;
+}
