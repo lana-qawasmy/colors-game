@@ -7,17 +7,8 @@ const Result = (props) => {
  
   return (
    <div className="result">
-       <Row value={props.question} answerList={props.answerList} state={props.state} show={props.show}/>
-       {/* { 
-        props.state.cc > 3 &&
-        props.setAnswerList([])
-       }
-       { 
-        props.state.cc === 4 &&
-        <button className="again">
-           Play Again
-        </button>
-       } */}
+       <Row win={props.win} value={props.question} answerList={props.answerList} state={props.state} show={props.show}/>
+    
    </div>
   )
 }
