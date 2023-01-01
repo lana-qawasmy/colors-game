@@ -20,15 +20,44 @@ function App() {
     setQuestion(tempQuestins);
  
   }, [])
-  console.log(answerList);
+  
+  const checkAnswer = (answer) => {
+    let cc = 0, cr = 0;
+
+    const map = {};
+    for (let i = 0; i < question.length; i++) {
+      if (!map[question[i]])
+        map[question[i]] = 0;
+      map[question[i]]++;
+    }
+    
+    for (let i = 0; i < answer.length; i++) {
+      if (map[answer[i]]) {
+        cr += 1;
+        map[answer[i]]--;
+      }
+    }
+    
+    for (let i = 0; i < answer.length; i++) {
+      if (question[i] === answer[i]) {
+        cc += 1;
+        cr--;
+      }
+    }
+   
+    return { cc, cr }
+  }
+const state = checkAnswer(answer);
+
   return (
     <div className="App">
       <ColorState answer={answer} setAnswer={setAnswer} 
       answerList={answerList} setAnswerList={setAnswerList}
       question={question} setQuestion={setQuestion}
+      state={state}
       />
-      <AnswerList answerList={answerList}  setAnswerList={setAnswerList}/>
-      <Result question={question} answerList={answerList}/>
+      <AnswerList answerList={answerList} state={state} setAnswerList={setAnswerList}/>
+      <Result question={question} answerList={answerList} state={state}/>
       <Step step={answerList.length}/>
 
     </div>

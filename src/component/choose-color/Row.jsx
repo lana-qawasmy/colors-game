@@ -4,6 +4,7 @@ import './row.css'
 const Initial = new Array(4).fill('grey'); 
 const Row = (props) => { 
   // console.log("value" , props.value);
+  console.log("answerListRow " , props.state);
   return (
     <div className="colorChoice">
       {
@@ -16,8 +17,8 @@ const Row = (props) => {
          
          
         }
-        <span>CC : {props.state.cc}</span>
-        <span>CW : {props.state.cr}</span>
+        { <span>CC : {props.state.cc}</span>}
+        { <span>CW : {props.state.cr}</span>} 
        
         
     </div>
